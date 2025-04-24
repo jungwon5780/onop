@@ -117,8 +117,8 @@ input[name="day_tab_item"] {
 
 .btn_content {
     display: flex;
-    margin: 10px; 
-    flex-wrap: wrap;
+    margin: 10px;
+    flex-direction: column;
 }
 
 .btn {
@@ -141,3 +141,22 @@ input[name="day_tab_item"] {
     align-items: center;
     justify-content: space-around;
 }
+
+
+.hidden {
+    display: none;
+}
+
+.sub_buttons {
+    margin-left: 20px;
+    transition: all 0.3s ease;
+}
+
+
+/* @media screen and (min-width:1008px) {
+    .btn_content {
+        display: flex;
+        margin: 10px;
+        flex-wrap: wrap;
+    }
+} */
