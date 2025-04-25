@@ -1,5 +1,5 @@
-h1,
-p {
+/* 공통 */
+h1, p {
     margin: 0px;
 }
 
@@ -8,22 +8,13 @@ a {
     font-weight: bold;
 }
 
+/* 상단 탭 메뉴 */
 .tabs {
-    margin-top: 50px;
-    padding-bottom: 40px;
+    margin: 50px 0;
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     width: 95%;
-    margin: 0 auto;
-    display: f;
-}
-
-.day_tabs {
-    margin: 20px;
-    padding-bottom: 40px;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    width: 95%;
+    min-height: 700px;
     margin: 0 auto;
 }
 
@@ -38,73 +29,27 @@ a {
     color: #333333;
     display: block;
     float: left;
-    text-align: center;
     font-weight: bold;
     transition: all 0.2s ease;
 }
 
-.tab_item:hover,
-.day_tab_item:hover {
+.tab_item:hover {
     opacity: 0.75;
 }
 
-.day_tab_item {
-    width: calc(100%/4);
-    height: 50px;
-    border-bottom: 3px solid #333333;
-    background-color: #f8f8f8;
-    line-height: 50px;
-    font-size: 16px;
-    text-align: center;
-    color: #333333;
-    display: block;
-    float: left;
-    text-align: center;
-    font-weight: bold;
-    transition: all 0.2s ease;
-}
-
-/* 라디오 버튼 UI삭제*/
-input[name="tab_item"],
-input[name="day_tab_item"] {
-    display: none;
-}
-
-/* 탭 컨텐츠 스타일 */
-.tab_content {
-    display: none;
-    padding: 40px 40px 0;
-    clear: both;
-    overflow: hidden;
-    height: 100%;
-    min-height: 300px;
-}
-
-#Apr_content,
-#May_content {
-    display: none;
-}
-
-#Apr:checked~#Apr_content,
-#May:checked~#May_content {
-    display: block;
-}
-
-#Apr_22:checked~#Apr22_content,
-#Apr_23:checked~#Apr23_content,
-#Apr_24:checked~#Apr24_content,
-#Apr_25:checked~#Apr25_content {
-    display: block;
-}
-
-.tabs input:checked+.tab_item {
+.tabs input:checked + .tab_item {
     background-color: #333333;
     color: #fff;
 }
 
-.tabs input:checked+.day_tab_item {
-    background-color: #838383;
-    color: #fff;
+/* 월별 컨텐츠 토글 */
+input[name="tab_item"] {
+    display: none;
+}
+
+#Apr:checked ~ #Apr_content,
+#May:checked ~ #May_content {
+    display: block;
 }
 
 .none_link {
@@ -114,48 +59,3 @@ input[name="day_tab_item"] {
     font-size: 20px;
     color: #b9b9b9;
 }
-
-.btn_content {
-    display: flex;
-    margin: 10px;
-    flex-direction: column;
-}
-
-.btn {
-    margin: 10px 0;
-    color: #fff;
-}
-
-.day_btn {
-    width: 250px;
-    height: 35px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    margin: 10px;
-    color: #e9e9e9;
-    background-color: #838383;
-    border-radius: 10px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.hidden {
-    display: none;
-}
-
-.sub_buttons {
-    margin-left: 20px;
-    transition: all 0.3s ease;
-}
-
-
-/* @media screen and (min-width:1008px) {
-    .btn_content {
-        display: flex;
-        margin: 10px;
-        flex-wrap: wrap;
-    }
-} */

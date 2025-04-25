@@ -1,55 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>[진주 10기]</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[진주 10기]</title>
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-		integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="/css/main.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+	integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/css/main.css" />
 
 
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			const toggleBtn1 = document.querySelector('.toggle-btn1');
-			const subButtons1 = document.querySelector('.sub_buttons1');
-			const toggleBtn2 = document.querySelector('.toggle-btn2');
-			const subButtons2 = document.querySelector('.sub_buttons2');
+<script>
+	function loadTab(page) {
+		const april = document.getElementById("iframe_april");
+		const may = document.getElementById("iframe_may");
 
-			toggleBtn1.addEventListener('click', function (e) {
-				e.preventDefault(); // 링크 이동 방지
-
-				if (subButtons1.classList.contains('hidden')) {
-					subButtons1.classList.remove('hidden');
-					subButtons1.style.display = 'flex';
-					subButtons1.style.flexWrap = 'wrap';
-					subButtons1.style.margin = '0 0  0 20px';
-				} else {
-					subButtons1.classList.add('hidden');
-					subButtons1.removeAttribute('style');
-				}
-
-			});
-			toggleBtn2.addEventListener('click', function (e) {
-				e.preventDefault();
-
-				if (subButtons2.classList.contains('hidden')) {
-					subButtons2.classList.remove('hidden');
-					subButtons2.style.display = 'flex';
-					subButtons2.style.flexWrap = 'wrap';
-					subButtons2.style.margin = '0 0  0 20px';
-				} else {
-					subButtons2.classList.add('hidden');
-					subButtons2.removeAttribute('style');
-				}
-
-			});
-		});
-	</script>
-
+		if (page === "April.html") {
+			april.style.display = "block";
+			may.style.display = "none";
+		} else if (page === "May.html") {
+			april.style.display = "none";
+			may.style.display = "block";
+		}
+	}
+</script>
 
 </head>
 
@@ -63,397 +38,21 @@
 			<div class="tabs" style="margin: 30px 10px;">
 
 				<input id="Apr" type="radio" name="tab_item" checked>
-				<label class="tab_item" for="Apr">4월</label>
+				<label class="tab_item" for="Apr" onclick="loadTab('April.html')">4월</label>
+
 				<input id="May" type="radio" name="tab_item">
-				<label class="tab_item" for="May">5월</label>
+				<label class="tab_item" for="May" onclick="loadTab('May.html')">5월</label>
 
-				<!--  -->
-				<div class="day_taps" id="Apr_content">
-
-					<input id="Apr_22" type="radio" name="day_tab_item">
-					<label class="day_tab_item" for="Apr_22">22일</label>
-					<input id="Apr_23" type="radio" name="day_tab_item">
-					<label class="day_tab_item" for="Apr_23">23일</label>
-					<input id="Apr_24" type="radio" name="day_tab_item" checked>
-					<label class="day_tab_item" for="Apr_24">24일</label>
-					<input id="Apr_25" type="radio" name="day_tab_item">
-					<label class="day_tab_item" for="Apr_25">25일</label>
-
-					<!-- 22일 -->
-					<div class="tab_content" id="Apr22_content">
-						<div class="btn_content">
-
-							<div class="day_btn">
-								<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-								<a class="btn" href="/hw/4/0422.html">22일(화) 과제</a> <br>
-							</div>
-						</div>
-					</div>
-
-					<!-- 23일 -->
-					<div class="tab_content" id="Apr23_content">
-						<div class="btn_content">
-
-							<div class="day_btn">
-								<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-								<a class="btn" href="/hw/4/0423_1.html">23일(수) 중간 과제</a> <br>
-							</div>
-							<div class="day_btn">
-								<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-								<a class="btn" href="/hw/4/0423_2.html">23일(수) 과제 gomdory</a> <br>
-							</div>
-							<div class="day_btn">
-								<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-								<a class="btn" href="/hw/4/0423_3.html">23일(수) 과제 travel</a> <br>
-							</div>
-							<div class="day_btn">
-								<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-								<a class="btn" href="/hw/4/0423_4.html">23일(수) 과제 trend</a> <br>
-							</div>
-							<div class="day_btn">
-								<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-								<a class="btn" href="/hw/4/0423_5.html">23일(수) 과제 mice</a> <br>
-							</div>
-						</div>
-					</div>
-
-					<!-- 24일일 -->
-					<div class="tab_content" id="Apr24_content">
-						<div class="btn_content">
-							<!-- 오전과제 버튼 -->
-							<div class="day_btn" style="background-color: #444;">
-								<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-								<a class="btn toggle-btn1" href="#">오전 과제</a><br>
-							</div>
-							<div class="sub_buttons1 hidden" style="margin-left: 20px;">
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/0424_em.html">24일(목) 과제 em</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/0424_rem.html">24일(목) 과제 rem</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/0424_image.html">24일(목) 과제 image</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/0424_mq.html">24일(목) 과제 mq</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/0424_object-fit.html">24일(목) 과제 object-fit</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/0424_quiz.html">24일(목) 과제 quiz</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/center.html">24일(목) 과제 center</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/flex-1.html">24일(목) 과제 flex-1</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/flex-2.html">24일(목) 과제 flex-2</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/flex-3.html">24일(목) 과제 flex-3</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/flex-4.html">24일(목) 과제 flex-4</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/flex-5.html">24일(목) 과제 flex-5</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/flex-6.html">24일(목) 과제 flex-6</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/flex-7.html">24일(목) 과제 flex-7</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/flex-8.html">24일(목) 과제 flex-8</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/flex-9.html">24일(목) 과제 flex-9</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/flex-10.html">24일(목) 과제 flex-10</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/flex-11.html">24일(목) 과제 flex-11</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/margin-1.html">24일(목) 과제 margin-1</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/margin-2.html">24일(목) 과제 margin-2</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/our-team.html">24일(목) 과제 our-team</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424/quiz-1.html">24일(목) 과제 quiz-1</a> <br>
-								</div>
-							</div>
-
-							<!-- 오후과제 버튼 -->
-							<div class="day_btn" style="background-color: #444; margin-top: 20px">
-								<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-								<a class="btn toggle-btn2" href="#">오후 과제</a><br>
-							</div>
-							<div class="sub_buttons2 hidden" style="margin-left: 20px;">
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/12/grid-1.html">grid-1</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/12/grid-2.html">grid-2</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/12/grid-3.html">grid-3</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/12/grid-4.html">grid-4</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/12/grid-5.html">grid-5</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/12/gallery.html">gallery</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/12/quiz-1.html"> quiz-1 </a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/12/quiz-2.html"> quiz-1 </a> <br>
-								</div>
-
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/descendant.html">descendant</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/child.html">child </a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/adj.html">adj </a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/sibling.html">sibling</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/register1.html">register1</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/attr-1.html"> attr 1</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/attr-2.html"> attr 2</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/attr-3.html"> attr 3</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/attr-4.html"> attr 4</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/attr-5.html"> attr 5</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/attr-6.html"> attr 6</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/attr-7.html"> attr 7</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/register2.html"> register2</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/navi.html"> navi</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/pclass-2.html"> pclass 2</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/pclass-3.html"> pclass 3</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/pclass-4.html"> pclass 4</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/pclass-5.html"> pclass 5</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/register3.html"> register3 </a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/pclass-7.html">pclass 7 </a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/pelement-1.html"> pelement1</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/pelement-2.html"> pelement2</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/badge.html">badge </a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/calc.html">calc </a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/minmax.html">minmax </a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/clamp.html"> clamp</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/filter.html">filter </a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/quiz-1.html"> quiz 1</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/13/quiz-2.html"> quiz 2</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/14/01.translate.html"> translate</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/14/02.scale.html">scale </a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/14/03.rotate.html">rotate </a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/14/04.perspective.html">perspective </a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/14/05.rotate3d.html">rotate3d </a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/14/06.skew.html">skew </a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/14/07.tr-1.html">tr1 </a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/14/08.product.html"> product</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/14/09.ani-1.html">ani 1 </a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/14/10.ani-2.html">ani 2 </a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/14/11.ani-3.html">ani 3 </a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/14/12.button.html">button </a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/14/13.quiz-1.html"> quiz 1</a> <br>
-								</div>
-								<div class="day_btn">
-									<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-									<a class="btn" href="/hw/4/0424_2/14/14.quiz-2.html"> quiz 2</a> <br>
-								</div>
-
-							</div>
-						</div>
-					</div>
-
-					<!-- 5월월 -->
-					<div class="tab_content" id="Apr25_content">
-						<div class="btn_content">
-
-							<!-- <div class="day_btn">
-							<i class="fa-solid fa-link" style="margin-right: 5px;"></i>
-							<a class="btn" href="/hw/4/0422.html">22일(화) 과제</a> <br>
-						</div> -->
-
-						</div>
-					</div>
+				<!-- iframe 두 개를 div로 감싸기 -->
+				<div id="iframe_april" style="display: block;">
+					<iframe src="tab/April.html" width="100%" height="670px" frameborder="0"></iframe>
+				</div>
+				<div id="iframe_may" style="display: none;">
+					<iframe src="tab/May.html" width="100%" height="670px" frameborder="0"></iframe>
 				</div>
 
 
 
-				<div class="tab_content" id="May_content">
-					<div style="margin: 10px;">
-						<div>
-							<div class="none_link"> 현재 연결된 페이지가 없습니다. </div>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
