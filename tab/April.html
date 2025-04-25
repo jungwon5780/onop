@@ -12,58 +12,81 @@
     <title>Document</title>
 
     <script>
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     const toggleBtn1 = document.querySelector('.toggle-btn1');
+        //     const subButtons1 = document.querySelector('.sub_buttons1');
+        //     const toggleBtn2 = document.querySelector('.toggle-btn2');
+        //     const subButtons2 = document.querySelector('.sub_buttons2');
+        //     const toggleBtn3 = document.querySelector('.toggle-btn3');
+        //     const subButtons3 = document.querySelector('.sub_buttons3');
+    
+        //     toggleBtn1.addEventListener('click', function (e) {
+        //         e.preventDefault(); // 링크 이동 방지
+    
+        //         if (subButtons1.classList.contains('hidden')) {
+        //             subButtons1.classList.remove('hidden');
+        //             subButtons1.style.display = 'flex';
+        //             subButtons1.style.flexWrap = 'wrap';
+        //             subButtons1.style.margin = '0 0  0 20px';
+        //         } else {
+        //             subButtons1.classList.add('hidden');
+        //             subButtons1.removeAttribute('style');
+        //         }
+    
+        //     });
+        //     toggleBtn2.addEventListener('click', function (e) {
+        //         e.preventDefault();
+    
+        //         if (subButtons2.classList.contains('hidden')) {
+        //             subButtons2.classList.remove('hidden');
+        //             subButtons2.style.display = 'flex';
+        //             subButtons2.style.flexWrap = 'wrap';
+        //             subButtons2.style.margin = '0 0  0 20px';
+        //         } else {
+        //             subButtons2.classList.add('hidden');
+        //             subButtons2.removeAttribute('style');
+        //         }
+    
+        //     });
+        //     toggleBtn3.addEventListener('click', function (e) {
+        //         e.preventDefault();
+    
+        //         if (subButtons3.classList.contains('hidden')) {
+        //             subButtons3.classList.remove('hidden');
+        //             subButtons3.style.display = 'flex';
+        //             subButtons3.style.flexWrap = 'wrap';
+        //             subButtons3.style.margin = '0 0  0 20px';
+        //         } else {
+        //             subButtons3.classList.add('hidden');
+        //             subButtons3.removeAttribute('style');
+        //         }
+    
+        //     });
+        // });
         document.addEventListener('DOMContentLoaded', function () {
-            const toggleBtn1 = document.querySelector('.toggle-btn1');
-            const subButtons1 = document.querySelector('.sub_buttons1');
-            const toggleBtn2 = document.querySelector('.toggle-btn2');
-            const subButtons2 = document.querySelector('.sub_buttons2');
-            const toggleBtn3 = document.querySelector('.toggle-btn3');
-            const subButtons3 = document.querySelector('.sub_buttons3');
-    
-            toggleBtn1.addEventListener('click', function (e) {
-                e.preventDefault(); // 링크 이동 방지
-    
-                if (subButtons1.classList.contains('hidden')) {
-                    subButtons1.classList.remove('hidden');
-                    subButtons1.style.display = 'flex';
-                    subButtons1.style.flexWrap = 'wrap';
-                    subButtons1.style.margin = '0 0  0 20px';
-                } else {
-                    subButtons1.classList.add('hidden');
-                    subButtons1.removeAttribute('style');
-                }
-    
-            });
-            toggleBtn2.addEventListener('click', function (e) {
-                e.preventDefault();
-    
-                if (subButtons2.classList.contains('hidden')) {
-                    subButtons2.classList.remove('hidden');
-                    subButtons2.style.display = 'flex';
-                    subButtons2.style.flexWrap = 'wrap';
-                    subButtons2.style.margin = '0 0  0 20px';
-                } else {
-                    subButtons2.classList.add('hidden');
-                    subButtons2.removeAttribute('style');
-                }
-    
-            });
-            toggleBtn3.addEventListener('click', function (e) {
-                e.preventDefault();
-    
-                if (subButtons3.classList.contains('hidden')) {
-                    subButtons3.classList.remove('hidden');
-                    subButtons3.style.display = 'flex';
-                    subButtons3.style.flexWrap = 'wrap';
-                    subButtons3.style.margin = '0 0  0 20px';
-                } else {
-                    subButtons3.classList.add('hidden');
-                    subButtons3.removeAttribute('style');
-                }
-    
-            });
-        });
-    
+	for (let i = 1; i <= 3; i++) {
+		const toggleBtn = document.querySelector(`.toggle-btn${i}`);
+		const subButtons = document.querySelector(`.sub_buttons${i}`);
+
+		if (toggleBtn && subButtons) {
+			toggleBtn.addEventListener('click', function (e) {
+				e.preventDefault();
+
+				if (subButtons.classList.contains('hidden')) {
+					subButtons.classList.remove('hidden');
+					subButtons.style.display = 'flex';
+					subButtons.style.flexWrap = 'wrap';
+				} else {
+					subButtons.classList.add('hidden');
+					subButtons.removeAttribute('style');
+				}
+			});
+		}
+	}
+});
+
+
+
     </script>
 
 </head>
@@ -495,6 +518,9 @@
                     </div>
                     
                 </div>
+
+
+                
             </div>
         </div>
 
