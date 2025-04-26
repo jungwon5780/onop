@@ -9,160 +9,49 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/April.css" />
+    <script type="text/javascript" src="/js/April.js"></script> 
+
 
     <title>Document</title>
-
-    <script>
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const homeworkData = [
-                {
-                    date: "0422",
-                    label: "22일",
-                    tasks: [
-                        { text: "22일(화) 과제", href: "/hw/4/0422.html" }
-                    ]
-                },
-                {
-                    date: "0423",
-                    label: "23일",
-                    tasks: [
-                        { text: "22일(화) 과제", href: "/hw/4/0422.html" }
-                    ]
-                },
-                {
-                    date: "0424",
-                    label: "24일",
-                    tasks: [
-                        { text: "22일(화) 과제", href: "/hw/4/0422.html" }
-                    ]
-                },
-                {
-                    date: "0425",
-                    label: "25일",
-                    tasks: [
-                        { text: "and", href: "/hw/4/0425_1/and.html" },
-                        { text: "even", href: "/hw/4/0425_1/even.html" },
-                        { text: "dowhile", href: "/hw/4/0425_1/dowhile.html" },
-                        { text: "if 1", href: "/hw/4/0425_1/if-1.html" },
-                        { text: "if 2", href: "/hw/4/0425_1/if-2.html" },
-                        { text: "if 3", href: "/hw/4/0425_1/if-3.html" },
-                        { text: "or", href: "/hw/4/0425_1/or.html" },
-                        { text: "quiz 1", href: "/hw/4/0425_1/quiz-1.html" },
-                        { text: "quiz 2", href: "/hw/4/0425_1/quiz-2.html" },
-                        { text: "repeat 1", href: "/hw/4/0425_1/repeat-1.html" },
-                        { text: "repeat 2", href: "/hw/4/0425_1/repeat-2.html" },
-                    ]
-                }
-            ];
-
-            const container = document.querySelector(".day_taps");
-
-            homeworkData.forEach((item, index) => {
-                const inputId = `Apr_${item.date}`;
-                const contentId = `Apr${item.date}_content`;
-                const checked = index === 0 ? 'checked' : '';
-
-                // 1. 탭 input + label
-                const radio = document.createElement("input");
-                radio.type = "radio";
-                radio.name = "day_tab_item";
-                radio.id = inputId;
-                if (checked === 'checked') radio.checked = true;
-
-                const label = document.createElement("label");
-                label.className = "day_tab_item";
-                label.setAttribute("for", inputId);
-                label.innerText = item.label;
-
-                // 2. 탭 콘텐츠 영역
-                const content = document.createElement("div");
-                content.className = "tab_content";
-                content.id = contentId;
-
-                const btnContent = document.createElement("div");
-                btnContent.className = "btn_content";
-
-                // 3. 오전/오후 과제 그룹 반복
-                item.groups.forEach(group => {
-                    const toggleClass = group.toggleClass;
-
-                    // 토글 버튼 생성
-                    const toggleBtnWrap = document.createElement("div");
-                    toggleBtnWrap.className = "day_btn";
-                    toggleBtnWrap.style.backgroundColor = "#444";
-
-                    const toggleIcon = document.createElement("i");
-                    toggleIcon.className = "fa-solid fa-link";
-                    toggleIcon.style.marginRight = "5px";
-
-                    const toggleAnchor = document.createElement("a");
-                    toggleAnchor.className = `btn toggle-btn${toggleClass}`;
-                    toggleAnchor.href = "#";
-                    toggleAnchor.textContent = group.title;
-
-                    toggleBtnWrap.appendChild(toggleIcon);
-                    toggleBtnWrap.appendChild(toggleAnchor);
-
-                    const subButtonWrap = document.createElement("div");
-                    subButtonWrap.className = `sub_buttons${toggleClass} hidden`;
-                    subButtonWrap.style.marginLeft = "20px";
-
-                    group.tasks.forEach(task => {
-                        const taskBtn = document.createElement("div");
-                        taskBtn.className = "day_btn";
-
-                        const icon = document.createElement("i");
-                        icon.className = "fa-solid fa-link";
-                        icon.style.marginRight = "5px";
-
-                        const link = document.createElement("a");
-                        link.className = "btn";
-                        link.href = task.href;
-                        link.textContent = task.text;
-
-                        taskBtn.appendChild(icon);
-                        taskBtn.appendChild(link);
-                        subButtonWrap.appendChild(taskBtn);
-                    });
-
-                    btnContent.appendChild(toggleBtnWrap);
-                    btnContent.appendChild(subButtonWrap);
-                });
-
-                content.appendChild(btnContent);
-                container.appendChild(radio);
-                container.appendChild(label);
-                container.appendChild(content);
-            });
-
-            // 4. 토글 이벤트 처리
-            for (let i = 1; i <= 10; i++) {
-                const toggleBtn = document.querySelector(`.toggle-btn${i}`);
-                const subButtons = document.querySelector(`.sub_buttons${i}`);
-                if (toggleBtn && subButtons) {
-                    toggleBtn.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        if (subButtons.classList.contains('hidden')) {
-                            subButtons.classList.remove('hidden');
-                            subButtons.style.display = 'flex';
-                            subButtons.style.flexWrap = 'wrap';
-                        } else {
-                            subButtons.classList.add('hidden');
-                            subButtons.removeAttribute('style');
-                        }
-                    });
-                }
-            }
-        });
-
-    </script>
 
 </head>
 
 <body>
-    <div class="day_taps" id="Apr_content"></div>
+    <div class="day_taps" id="Apr_content">
 
+    <input id="Apr_22" type="radio" name="day_tab_item">
+    <label class="day_tab_item" for="Apr_22">22일</label>
+
+    <input id="Apr_23" type="radio" name="day_tab_item">
+    <label class="day_tab_item" for="Apr_23">23일</label>
+
+    <input id="Apr_24" type="radio" name="day_tab_item">
+    <label class="day_tab_item" for="Apr_24">24일</label>
+
+    <input id="Apr_25" type="radio" name="day_tab_item" checked>
+    <label class="day_tab_item" for="Apr_25">25일</label>
+
+    <input id="Apr_28" type="radio" name="day_tab_item">
+    <label class="day_tab_item" for="Apr_28">28일</label>
+
+    <input id="Apr_29" type="radio" name="day_tab_item">
+    <label class="day_tab_item" for="Apr_29">29일</label>
+
+    <input id="Apr_30" type="radio" name="day_tab_item">
+    <label class="day_tab_item" for="Apr_30">30일</label>
+
+    <!-- 각 날짜별 콘텐츠를 넣을 div (비어있음) -->
+    <div class="tab_content" id="Apr22_content"></div>
+    <div class="tab_content" id="Apr23_content"></div>
+    <div class="tab_content" id="Apr24_content"></div>
+    <div class="tab_content" id="Apr25_content"></div>
+    <div class="tab_content" id="Apr28_content"></div>
+    <div class="tab_content" id="Apr29_content"></div>
+    <div class="tab_content" id="Apr30_content"></div>
+
+
+
+    </div>
 </body>
 
 </html>
